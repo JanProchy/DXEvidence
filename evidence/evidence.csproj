@@ -40,8 +40,30 @@
     <Reference Include="DevExpress.XtraBars.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,16 +74,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="editaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="editaceForm.Designer.cs">
+      <DependentUpon>editaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hlavniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hlavniForm.Designer.cs">
+      <DependentUpon>hlavniForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lide.cs">
+      <DependentUpon>mujADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mujADO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mujADO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mujADO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mujADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mujADO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mujADO.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="mujModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mujModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mujModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mujModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="editControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editControl.Designer.cs">
+      <DependentUpon>editControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="pridaniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pridaniForm.Designer.cs">
+      <DependentUpon>pridaniForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="editaceForm.resx">
+      <DependentUpon>editaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hlavniForm.resx">
+      <DependentUpon>hlavniForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editControl.resx">
+      <DependentUpon>editControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -73,6 +147,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="pridaniForm.resx">
+      <DependentUpon>pridaniForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="mujADO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mujADO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="mujADO.edmx.diagram">
+      <DependentUpon>mujADO.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +168,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mujADO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mujADO.edmx</DependentUpon>
+      <LastGenOutput>mujADO.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="mujADO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mujADO.edmx</DependentUpon>
+      <LastGenOutput>mujADO.cs</LastGenOutput>
+    </Content>
+    <Content Include="mujModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>mujModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="mujModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>mujModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
