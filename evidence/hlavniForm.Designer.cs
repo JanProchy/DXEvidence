@@ -204,6 +204,7 @@
             // 
             // idColumn
             // 
+            this.idColumn.FieldName = "id_osoba";
             this.idColumn.Name = "idColumn";
             // 
             // layoutControlGroup1

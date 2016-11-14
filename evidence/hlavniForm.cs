@@ -38,10 +38,8 @@ namespace evidence
 
         private void editovatButton_Click(object sender, EventArgs e)
         {
-            pridaniForm editForm = new pridaniForm(dbContext);      //formular pridani osoby
-            editForm.Show();
-
             Lide editClovek = new Lide();
+
             editClovek.id_osoba = Int32.Parse(gridView1.GetFocusedRowCellDisplayText(idColumn));
             editClovek.jmeno = gridView1.GetFocusedRowCellDisplayText(jmenoColumn);
             editClovek.prijmeni = gridView1.GetFocusedRowCellDisplayText(prijmeniColumn);
@@ -49,6 +47,9 @@ namespace evidence
             editClovek.obec = gridView1.GetFocusedRowCellDisplayText(obecColumn);
             editClovek.telefon = Int32.Parse(gridView1.GetFocusedRowCellDisplayText(telefonColumn));
             editClovek.email = gridView1.GetFocusedRowCellDisplayText(emailColumn);
+
+            editaceForm editForm = new editaceForm(dbContext, editClovek);      //formular pridani osoby
+            editForm.Show();
         }
     }
 }
